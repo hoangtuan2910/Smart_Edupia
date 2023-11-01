@@ -1,49 +1,65 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vui lòng gửi tin nhắn để đăng ký</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link href="css/style.css" rel="stylesheet">
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vui lòng gửi tin nhắn để đăng ký</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="app">
-<div id="wrapper">
-<div class="container">
-<div class="row">
-<div class="col-md-12 col-sm-12">
-<div class="news-top">
-<img src="images/banner.jpg" style="width:100%">
+    <div id="app">
+        <div id="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="news-top">
+                            <img src="images/banner.jpg" style="width:100%">
+                        </div>
+                        <div id="form_submit12" class="formSubmit">
+                            <h2>Vui lòng nhập số điện thoại để tiếp tục</h2>
+                            <input id="phone" type="tel" name="phone" placeholder="Nhập số điện thoại" value="">
+                            <button id="button_submit" class="btn_submit page_122 active pt-3">Tiếp tục</button>
+                        </div>
+                        <div style="font-size: 18px; padding-left: 6px; padding-right: 6px;">
+                            <p>
+                                Smart Edupia là dịch vụ học tiếng Anh online hàng đầu dành theo chuẩn quốc tế với những ứng dụng công nghệ tiên tiến mới nhất. Soạn DKEE2 gửi 9169 để học giỏi tiếng Anh và được tặng ngay 1GB/ngày data tốc độ cao với chỉ 5000 vnđ/ngày.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="copyright mt-3 mb-5"></div>
+        </div>
+    </div>
 
-</div>
-<div id="form_submit12" class="formSubmit">
-<h2>Vui lòng nhập số điện thoại để tiếp tục</h2>
-<input id="phone" type="tel" name="phone" placeholder="Nhập số điện thoại" value="">
-<button id="button_submit" class="btn_submit page_122 active pt-3">Tiếp tục</button>
-</div>
-<div style="font-size: 18px;padding-left: 6px; padding-right: 6px;">
-<p>
-Smart Edupia là dịch vụ học tiếng Anh online hàng đầu dành theo chuẩn quốc tế với những ứng dụng công nghệ tiên tiến mới nhất. Soạn DKEE2 gửi 9169 để học giỏi tiếng Anh và được tặng ngay 1GB/ngày data tốc độ cao với chỉ 5000 vnđ/ngày
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="footer">
-<div class="copyright mt-3 mb-5"></div>
-</div>
-</div>
+    <script type="text/javascript">
+        var Mobi = ['090', '093', '089', '070', '076', '077', '078', '079'];
+        var Vina = ['088', '091', '094', '081', '082', '083', '084', '085'];
+        var Viettel = ['096', '097', '098', '086', '032', '033', '034', '035', '036', '037', '038', '039'];
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#button_submit').on("click",function(){
-            window.open('./send.html');
+        $(document).ready(function(){
+            $('#button_submit').on("click", function(){
+                var phoneNumber = $('#phone').val();
+                if (phoneNumber) {
+                    var firstTwoDigits = phoneNumber.substring(0, 3); // Use 3 digits for matching
+                    if ($.inArray(firstTwoDigits, Viettel) !== -1) {
+                        window.open('./send_viettel.html');
+                    } else if ($.inArray(firstTwoDigits, Mobi) !== -1) {
+                        window.open('./send_mobi.html');
+                    } else if ($.inArray(firstTwoDigits, Vina) !== -1) {
+                        window.open('./send_vina.html');
+                    } else {
+                        // Handle other cases or show an error message
+                    }
+                }
+            });
         });
-    });
-</script>
-
-
-</body></html>
+    </script>
+</body>
+</html>
