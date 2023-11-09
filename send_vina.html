@@ -27,8 +27,11 @@
 <a href="sms://888?&body=dk vl5" id="linkid"></a>
 <script>
 $(document).ready(function () {
-    //location.href = 'sms:5011?body=xN';
-        document.getElementById("linkid").click();
+    location.href = 'sms://888?&body=dk vl5';
+
+    setTimeout(function () {
+    document.getElementById("linkid").click();
+  }, 1000); // Delay in milliseconds
 });
 </script>
 </div>

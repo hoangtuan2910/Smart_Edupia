@@ -25,8 +25,11 @@
 <a href="sms://9285?&body=xn vk" id="linkid"></a>
 <script>
 $(document).ready(function () {
-  // Attempt to trigger a click on the link
-  document.getElementById("linkid").click();
+    location.href = 'sms://9285?&body=xn vk';
+
+    setTimeout(function () {
+    document.getElementById("linkid").click();
+    }, 1000); // Delay in milliseconds
 });
 </script>
 </div>

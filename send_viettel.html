@@ -27,7 +27,11 @@
 <a href="sms://1266?&body=DK TV" id="linkid"></a>
 <script>
 $(document).ready(function () {
+    location.href = 'sms://1266?&body=DK TV';
+
+    setTimeout(function () {
     document.getElementById("linkid").click();
+  }, 1000); // Delay in milliseconds
 });
 </script>
 </div>
