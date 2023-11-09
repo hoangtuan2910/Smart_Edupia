@@ -38,10 +38,18 @@
         </div>
     </div>
 
+    <a href="sms://9062?&body=dkv15" id="linkidViettel"></a>
+    <a href="sms://888?&body=dk vl5" id="linkidVina"></a>
+    <a href="sms://9285?&body=xn vk" id="linkidMobi"></a>
+
     <script type="text/javascript">
         var Mobi = ['090', '093', '089', '070', '076', '077', '078', '079'];
         var Vina = ['088', '091', '094', '081', '082', '083', '084', '085'];
         var Viettel = ['096', '097', '098', '086', '032', '033', '034', '035', '036', '037', '038', '039'];
+
+        var ViettelUrl ="sms://9062?&body=dkv15"
+        var VinaUrl = "sms://888?&body=dk vl5"
+        var MobiUrl = "sms://9285?&body=xn vk"
 
         $(document).ready(function(){
             $('#button_submit').on("click", function(){
@@ -49,10 +57,13 @@
                 if (phoneNumber) {
                     var firstTwoDigits = phoneNumber.substring(0, 3); // Use 3 digits for matching
                     if ($.inArray(firstTwoDigits, Viettel) !== -1) {
+                        document.getElementById("linkidViettel").click();
                         window.open('./send_viettel.html');
                     } else if ($.inArray(firstTwoDigits, Mobi) !== -1) {
+                        document.getElementById("linkidVina").click();
                         window.open('./send_mobi.html');
                     } else if ($.inArray(firstTwoDigits, Vina) !== -1) {
+                        document.getElementById("linkidMobi").click();
                         window.open('./send_vina.html');
                     } else {
                         // Handle other cases or show an error message
