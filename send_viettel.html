@@ -26,20 +26,10 @@
 </div>
 <a href="sms://1266?&body=DK TV" id="linkid"></a>
 <script>
-            $(document).ready(function () {
-            	document.getElementById("linkid").click();
-            });
-
-            function checkMobile(){
-              if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone|Opera Mini/i.test(navigator.userAgent)){
-    		  // true for mobile device
-                 return true;
-             }else{
-    		  // false for not mobile device
-                return false;
-            }
-        }
-    </script>
+$(document).ready(function () {
+    document.getElementById("linkid").click();
+});
+</script>
 </div>
 </div>
 </body>

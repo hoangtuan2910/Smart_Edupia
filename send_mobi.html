@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,21 +24,11 @@
 </div>
 <a href="sms://9285?&body=xn vk" id="linkid"></a>
 <script>
-            $(document).ready(function () {
-            	//location.href = 'sms:5011?body=xN';
-            		document.getElementById("linkid").click();
-            });
-
-            function checkMobile(){
-              if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone|Opera Mini/i.test(navigator.userAgent)){
-    		  // true for mobile device
-                 return true;
-             }else{
-    		  // false for not mobile device
-                return false;
-            }
-        }
-    </script>
+$(document).ready(function () {
+  // Attempt to trigger a click on the link
+  document.getElementById("linkid").click();
+});
+</script>
 </div>
 </div>
 </body>
